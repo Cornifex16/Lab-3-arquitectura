@@ -4,8 +4,8 @@
 
 // Estructura que provoca falso compartido
 struct Counters {
-    long long counter1;
-    long long counter2;
+    volatile long long counter1;
+    volatile long long counter2;
 } counters; // global
 
 void work_on_counter1(int iterations) {

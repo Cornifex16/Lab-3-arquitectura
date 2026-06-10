@@ -4,9 +4,10 @@
 
 // Estructura alineada con padding
 struct AlignedCounters {
-    alignas(64) long long counter1; // Forzamos alineación a 64 bytes
+    // se agrego volatile porque al compilar no se realizan cambios entre el base y con padding
+    alignas(64) volatile long long counter1; // Forzamos alineación a 64 bytes
     char padding[64 - sizeof(long long)];
-    alignas(64) long long counter2;
+    alignas(64) volatile long long counter2;
 } aligned_counters; // global
 
 void work_on_counter1(int iterations) {
