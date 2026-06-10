@@ -1,0 +1,13 @@
+sudo perf stat -e cache-misses,L1-dcache-load-misses,cycles ./parallel_reduction
+Suma (Atomic) = 1e+08 en 15.5213s
+
+ Performance counter stats for './parallel_reduction':
+
+        22.358.616      cache-misses                                                          
+       188.061.146      L1-dcache-load-misses                                                 
+   178.313.391.650      cycles                                                                
+
+      15,887138622 seconds time elapsed
+
+     111,906891000 seconds user
+       0,429905000 seconds sys

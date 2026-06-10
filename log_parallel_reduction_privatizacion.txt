@@ -1,0 +1,13 @@
+sudo perf stat -e cache-misses,L1-dcache-load-misses,cycles ./parallel_reduction_privatizacion
+Suma (Privatizacion) = 1e+08 en 0.0525132s
+
+ Performance counter stats for './parallel_reduction_privatizacion':
+
+        20.872.320      cache-misses                                                          
+        42.849.242      L1-dcache-load-misses                                                 
+     1.462.831.560      cycles                                                                
+
+       0,414651593 seconds time elapsed
+
+       0,733834000 seconds user
+       0,288010000 seconds sys

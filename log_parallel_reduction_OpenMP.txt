@@ -1,0 +1,13 @@
+sudo perf stat -e cache-misses,L1-dcache-load-misses,cycles ./parallel_reduction_OpenMP
+Suma (Reduction) = 1e+08 en 0.0323211s
+
+ Performance counter stats for './parallel_reduction_OpenMP':
+
+        20.831.110      cache-misses                                                          
+        42.148.259      L1-dcache-load-misses                                                 
+     1.251.370.233      cycles                                                                
+
+       0,393625607 seconds time elapsed
+
+       0,589417000 seconds user
+       0,282597000 seconds sys
