@@ -1,0 +1,17 @@
+sudo perf stat -e branch-misses,branches,cycles,instructions ./branch_prediction_a
+leatorio
+Ejecutando con datos aleatorios (impredecible)...
+Resultado: 3749999925000000 Tiempo: 2.38074s
+
+
+ Performance counter stats for './branch_prediction_aleatorio':
+
+       102.458.432      branch-misses                    #    1,30% of all branches           
+     7.900.344.233      branches                                                              
+    38.394.161.789      cycles                                                                
+    53.265.765.009      instructions                     #    1,39  insn per cycle            
+
+      31,977470123 seconds time elapsed
+
+      31,838588000 seconds user
+       0,127962000 seconds sys

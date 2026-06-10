@@ -25,13 +25,6 @@ int main(int argc, char* argv[]) {
     std::iota(data.begin(), data.end(), 0);
     int threshold = N / 2;
 
-    std::cout << "Ejecutando con datos predecibles (ordenados)..." << std::endl;
-    auto start = std::chrono::high_resolution_clock::now();
-    long long result1 = sum_if(data, threshold);
-    auto end = std::chrono::high_resolution_clock::now();
-    double time_pred = std::chrono::duration<double>(end - start).count();
-    std::cout << "Resultado: " << result1 << " Tiempo: " << time_pred << "s\n" << std::endl;
-
     // Mezclar datos aleatoriamente (patrón impredecible)
     std::random_device rd;
     std::mt19937 g(rd());
@@ -39,9 +32,9 @@ int main(int argc, char* argv[]) {
     std::shuffle(data.begin(), data.end(), g);
     
     std::cout << "Ejecutando con datos aleatorios (impredecible)..." << std::endl;
-    start = std::chrono::high_resolution_clock::now();
+    auto start = std::chrono::high_resolution_clock::now();
     long long result2 = sum_if(data, threshold);
-    end = std::chrono::high_resolution_clock::now();
+    auto end = std::chrono::high_resolution_clock::now();
     double time_rand = std::chrono::duration<double>(end - start).count();
     std::cout << "Resultado: " << result2 << " Tiempo: " << time_rand << "s\n" << std::endl;
 

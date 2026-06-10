@@ -30,18 +30,5 @@ int main(int argc, char* argv[]) {
     double time_pred = std::chrono::duration<double>(end - start).count();
     std::cout << "Resultado: " << result1 << " Tiempo: " << time_pred << "s\n" << std::endl;
 
-    // Directamente con datos impredecibles para medir la mejora
-    std::random_device rd;
-    std::mt19937 g(rd());
-    
-    std::shuffle(data.begin(), data.end(), g);
-    
-    std::cout << "Ejecutando OPTIMIZADO (Branchless) con datos aleatorios..." << std::endl;
-    start = std::chrono::high_resolution_clock::now();
-    long long result = sum_if_branchless(data, threshold);
-    end = std::chrono::high_resolution_clock::now();
-    double time_opt = std::chrono::duration<double>(end - start).count();
-    std::cout << "Resultado: " << result << " Tiempo: " << time_opt << "s\n" << std::endl;
-
     return 0;
 }
