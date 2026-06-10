@@ -1,0 +1,16 @@
+sudo perf stat -e branch-misses,branches,cycles,instructions ./branch_prediction_op_aleatorio
+Ejecutando OPTIMIZADO (Branchless) con datos aleatorios...
+Resultado: 3749999925000000 Tiempo: 1.37636s
+
+
+ Performance counter stats for './branch_prediction_op_aleatorio':
+
+        52.503.141      branch-misses                    #    0,67% of all branches           
+     7.790.856.260      branches                                                              
+    36.106.167.112      cycles                                                                
+    53.570.589.701      instructions                     #    1,48  insn per cycle            
+
+      29,976557027 seconds time elapsed
+
+      29,788201000 seconds user
+       0,124034000 seconds sys
