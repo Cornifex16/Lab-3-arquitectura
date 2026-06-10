@@ -1,0 +1,19 @@
+sudo perf stat -e branch-misses,branches,cycles,instructions ./branch_pred
+Ejecutando con datos predecibles (ordenados)...
+Resultado: 3749999925000000 Tiempo: 1.33941s
+
+Ejecutando con datos aleatorios (impredecible)...
+Resultado: 3749999925000000 Tiempo: 2.61552s
+
+
+ Performance counter stats for './branch_pred':
+
+       102.525.158      branch-misses                    #    1,12% of all branches           
+     9.166.091.167      branches                                                              
+    39.363.505.216      cycles                                                                
+    60.427.925.861      instructions                     #    1,54  insn per cycle            
+
+      30,233851273 seconds time elapsed
+
+      29,992051000 seconds user
+       0,195791000 seconds sys

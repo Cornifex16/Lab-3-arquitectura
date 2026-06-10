@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <cstdlib>
 #include <numeric>
+#include <random>
 
 // Función que suma elementos según umbral, generando una rama condicional
 long long sum_if(const std::vector<int>& data, int threshold) {
@@ -19,7 +20,7 @@ long long sum_if(const std::vector<int>& data, int threshold) {
 int main(int argc, char* argv[]) {
     const size_t N = 100000000; // 100 millones de elementos
     std::vector<int> data(N);
-    
+
     // Inicialización con patrón predecible: valores ordenados
     std::iota(data.begin(), data.end(), 0);
     int threshold = N / 2;
@@ -32,7 +33,10 @@ int main(int argc, char* argv[]) {
     std::cout << "Resultado: " << result1 << " Tiempo: " << time_pred << "s\n" << std::endl;
 
     // Mezclar datos aleatoriamente (patrón impredecible)
-    std::random_shuffle(data.begin(), data.end());
+    std::random_device rd;
+    std::mt19937 g(rd());
+    
+    std::shuffle(data.begin(), data.end(), g);
     
     std::cout << "Ejecutando con datos aleatorios (impredecible)..." << std::endl;
     start = std::chrono::high_resolution_clock::now();

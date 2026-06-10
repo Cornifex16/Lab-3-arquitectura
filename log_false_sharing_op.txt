@@ -1,0 +1,14 @@
+sudo perf stat -e cache-misses,L1-dcache-load-misses,cycles ./false_sharing_op
+Tiempo sin falso compartido (Padding): 0.0329395s
+counter1 = 500000000, counter2 = 500000000
+
+ Performance counter stats for './false_sharing_op':
+
+            48.179      cache-misses                                                          
+            80.780      L1-dcache-load-misses                                                 
+       220.343.545      cycles                                                                
+
+       0,036937973 seconds time elapsed
+
+       0,189291000 seconds user
+       0,000000000 seconds sys
